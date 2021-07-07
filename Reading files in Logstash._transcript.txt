@@ -1,0 +1,78 @@
+Welcome back to our second task of this project.
+We have previously worked on understood log file
+that will be used in Logstash.
+This was the first step in visualizing our logs.
+In this second task.
+You will be learning how Logstash works and how it fits
+into the Elasticstack.
+Firstly, let's begin by the defining.
+What Logstash is?  Logstash is an open source tool that runs
+on your server to collect logs, process them and then ship
+them to your indices would simplify things, but more
+by giving an analogy.
+Don't you worry.
+Imagine our generic application that we used in Task 1.
+The access log file gets a logline with each request, just
+as you did in task 1.
+Logstash simply listens to changes on that file.
+That's the newly added logline and tries to parse it
+and transform it into JSON format.
+Using many plug ins, which we'll see in a few afterwards,
+it sends logline to the corresponding index on Elasticsearch.
+One of the famous plug ins, which will be using is Grok.
+Grok is a plug in which matches log lines using regular
+expressions and transforms them into JSON format.
+Logstash is considered as a log pipeline the pipeline stages
+are input ,filters or transform ,and outputs.
+As you can see, the Grok plug in settles in the transform
+phase. In the Logstash, you can put your Grok plug in.
+Here were the mouse's at filters.
+You can also see that there are a lot of inputs to Logstash.
+The flexibility Logstash offers makes it an important
+and versatile log pipeline, which is essential for collecting
+un structured, semi structured or fully structured logs
+in any It.
+Environment.
+Till now. Now you should understand what Logstash is and how
+it fits into our test.
+So let's start by implementing the Logstash pipeline in our
+environment.
+Now let's dive into our second task where you'll be applying
+this knowledge on our giving log file.
+Firstly, let's create our conf file, which will hold our
+Logstash pipeline press right lcick and create new document and then
+go to empty file.
+Give the final name, for example.
+logststash-pipeline.conf
+ right click open
+your file with sublime text.
+Here we have our empty file now, ready for our inputs based
+paste in the file snippet into your file to your Logstash
+pipeline conf file.
+Now let's explain what is written in details.
+We have created an input plug in which is over here
+and inside the input plug in.
+We have the file plug in.
+The file plug in contains the path for the log files, which
+will be fed into our pipeline.
+The Asterix is a wild card, meaning that any file ending
+with dot log inside the inside the desktop folder
+should be fed into our pipeline by default.
+Logstash does not load up the whole file each time runs
+in order for it to work efficiently, it holds a pointer
+to the last line it read inside each log file.
+For example, if Logstash is shut down at Line 50 in our log
+file, when it reruns again, it will start at Line
+51 instead of returning to the first time.
+However, for us to the debug easily.
+The second line, which start_position beginning
+and since_db_path to /dev/null are set, this
+override these features and make Logstash read from the first line
+time each time it runs.
+Lastly, we add the type which has syslog in it for us to parse
+easier in the filter stage.
+Super and congratulations on finishing your second test.
+In this task, you have learned what Logstash is
+and constructed your first stage in the pipeline in the next
+next task will construct the 2nd and 3rd stages
+in the Logstash pipeline.

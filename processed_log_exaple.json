@@ -1,0 +1,10 @@
+{
+       "status_code" => "200",
+         "http_type" => "HTTP/1.1",
+              "host" => "OSXs-MacBook-Pro.local",
+               "url" => "/css/main.css",
+   "syslog_hostname" => "10.128.2.1",
+              "path" => "/Users/osx/Documents/Nimbelbot/weblog.log",
+         "http_verb" => "GET",
+        "@timestamp" => 2018-02-27T20:00:27.000Z
+}

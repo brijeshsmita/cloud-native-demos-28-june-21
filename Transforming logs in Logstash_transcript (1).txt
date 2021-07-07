@@ -1,0 +1,117 @@
+Welcome back in the previous task you have understood
+Logstash is and how it falls into the Elasticstack.
+Also, you created your config file with the input stage.
+Having the file plug in in this task will be finishing up our
+Grok patterns, which is the heart of Logstash.
+Let's start with our second task.
+By creating grok patterns, let's start with our raw line
+and transform and transformed.
+Going this way, you could visualize what our end of mind is
+to visualize things more.
+For example, here's our logline, and this is how we would
+like to transform it into the new JSON.
+We use the following using Grok.
+We need to convert it to JSON as the logline, which is comma.
+Separated is incomprehensible to to be stored
+in Elasticsearch.
+Elasticsearch expects several logs or its documents to be
+in JSON format.
+We will touch on how Elasticsearch works in the upcoming tasks,
+so don't worry.
+Before we start editing the config file again open up
+the terminal on desktop.
+after opening up your terminal, make sure to change your
+directory.
+Have the etc Logstash the changing directory.
+create a  directly inside this following directory.
+Having the name as patterns well directly should look
+something like that after changing and going into patterns
+create a file
+called pattern
+use the sudo command In order to get privileges
+after creating the file pattern, open the file
+using sublime.
+In order to start editing, make sure to open the file
+with sudo privileges inorder to save the file.
+Sublime window should open with your file to be ready
+to be edited.
+You have just created the patterns file, which will hold
+the custom regular expression to hold our log timestamp pasye
+the following inside the newly created file.
+Here we created a custom regular expression to match our log
+timestamp.
+Let's divert of it and explain how Grok works in order
+to understand what we have just pasted it.
+Grok uses some preset regular expressions such a number month
+year host address.
+You get the point.
+You can view all patterns on the following link, which is
+in chrome and many more you can view.
+all already made templates and patterns off Grok
+and the official github Logstash the repository.
+You can, for example, see the user name, which is defined
+by this regular expression.
+For example, we could take the Mac address, which is divided
+by this expression, or the IP or host name and etcetera
+etcetera.
+Unfortunately, our daytime format is not supported in they
+already made Grok patterns.
+This is usually the case in production environments,
+so we'll have to create our own custom pattern.
+In order to create your own custom pattern, you must create
+a folder called Patterns Inside It.
+This is to create the files for your patterns, as we had just
+done for the pattern file.
+The format for each pattern goes as follows.
+You write the pattern name, then it follows with the space.
+For example, timestamp is our pattern name, and after the
+pattern name, you should follow it with the regular
+expression.
+Luckily, we could use the groks already made patterns.
+Let's try matching our date with above regex.
+So let's try matching our Tregex.
+The regex matches 27 with month day Feb, with month 2018,
+with a year 20 with our 00 with minute and 27 with second.
+Remember also always use the syntax that Grok patterns
+follow for example, month day starts with the percentage and
+the word month is between  curly brackets.
+Also remember to escape special characters by using the
+front slash Just as I escaped the backslash and the
+double points cool, we created our first custom pattern which
+we used to match the timestamp with our logs.
+This task demonstrates for us how Grok already made
+patterns makes our lives easier.
+When creating regex for our logs, try pausing the video and
+coming up with a Grok pattern using the newly created custom
+pattern timestamp for our logline, for example which is stored
+here. Feel free to use the Grok patterns inside this link
+inside this link in order to generate your pattern.
+Resmue the video and I'll show you my explanation.
+Welcome back Now let's compare results.
+Firstly, we used the syslog host to capture the IP in the
+syslog host name.
+Then we had a coma and escape the bracket character using the
+front slash bracket.
+Then use your customer path made pattern timestamp capture it
+inside the syslog timestamp we follow it with a comma.
+We follow it with the word which we capture for us to.
+Http verb.
+For example, they get put post, delete, etcetera.
+We follow it with an empty space.
+Then we add the greedy data.
+Well, it is simply like wildcard, which captures any
+character in its way.
+. Follow the first greedy data, which got the
+URL. Then use another.
+greedy data with http type to capture the protocol.
+Remember to put the white space in between both greedy data in
+order to break and separate both patterns.
+Lastly, we add a comma and the number to capture the http
+status code.
+Now we're ready to resume building our Logstash pipeline.
+In the end, it's second stage, which is transforming data.
+Great. Now we have finished our third task in this task we
+created Grok patterns which will be used in the next steps.
+Your process.
+Convert the grok raw logline into JSON.
+Object needed for Elasticsearch.
